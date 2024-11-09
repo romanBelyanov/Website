@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Регистрация{% endblock %}
+
+{% block content %}
+<form action="{% url 'new_user'%}" method="POST">
+
+        {% csrf_token %}
+
+        <input type="text" required placeholder="Ваше имя" name="name"><br>
+        <textarea name="region" required placeholder="Ваш регион" cols="30" rows="10"></textarea><br>
+        <input type="number" name="age" required placeholder="Ваш возраст"><br>
+        <textarea name="floor" required placeholder="Ваш пол" cols="30" rows="10"></textarea><br>
+        <textarea name="password" required placeholder="" cols="30" rows="10">Пароль</textarea><br>
+        <textarea name="confirm_password" required placeholder="" cols="30" rows="10">Повторите пароль</textarea><br>
+
+
+        <button type="submit">Зарегистрироваться</button>
+
+    </form>
+
+
+{% endblock %}
